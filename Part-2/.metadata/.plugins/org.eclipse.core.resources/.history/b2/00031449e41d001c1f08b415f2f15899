@@ -1,0 +1,10 @@
+package assignmentGL.Stocks.Counting;
+
+public class StockPriceRose {
+
+	public int priceDec(Boolean[] arrayOfBool) {
+	    int count = 0;
+	    for (Boolean b : arrayOfBool) if (b) count++;
+	    return count;
+	  }
+}

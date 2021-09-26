@@ -1,0 +1,56 @@
+package assignmentGL.Stocks;
+
+import java.util.Scanner;
+
+public class StockInDescending {
+	static int length;
+	
+	public static void descArray(int[] array)
+	{
+		int temporary = 0;
+        length = array.length;
+        
+		for (int i = 0; i < array.length; i++) {     
+            for (int j = i+1; j < array.length; j++) {     
+               if(array[i] < array[j]) {    
+                   temporary = array[i];    
+                   array[i] = array[j];    
+                   array[j] = temporary;    
+               }     
+            }     
+        } 
+		System.out.println(
+	            "Elements of array sorted in ascending order: ");
+	        printArray(array);
+	}
+	
+	public static void printArray(int[] array)
+    {
+        // Iterating using for loops
+        for (int i = 0; i < length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+		
+		
+	 public static void main(String[] args) {        
+		 int n;  
+		    Scanner sc=new Scanner(System.in);  
+		    System.out.print("Enter the number of elements you want to store: ");  
+		    //reading the number of elements from the that we want to enter  
+		    n=sc.nextInt();  
+		    //creates an array in the memory of length 10  
+		    int[] array = new int[n];  
+		    System.out.println("Enter the elements of the array: ");  
+		    for(int i=0; i<n; i++)  
+		    {  
+		    //reading array elements from the user   
+		    array[i]=sc.nextInt();  
+		    }  
+		    length = array.length;
+		    printArray(array);
+		    descArray(array);    
+	        
+	}    
+}

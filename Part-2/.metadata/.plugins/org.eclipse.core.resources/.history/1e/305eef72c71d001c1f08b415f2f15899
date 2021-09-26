@@ -1,0 +1,72 @@
+package assignmentGL.Stocks;
+
+import java.util.Scanner;
+
+public class StockInAscending {
+	static int length;
+	  
+    // Method 1
+    // To print the array
+    public static void printArray(int[] array)
+    {
+        // Iterating using for loops
+        for (int i = 0; i < length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+  
+    // Method 2
+    // To sort an array
+    public static void sortArray(int[] array)
+    {
+        int temporary = 0;
+  
+        // Sort the array 'arr' elements in ascending order
+        // using nested for loops
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (array[i] > array[j]) {
+                    temporary = array[i];
+                    array[i] = array[j];
+                    array[j] = temporary;
+                }
+            }
+        }
+  
+        // Displaying elements of array after sorting
+        System.out.println(
+            "Elements of array sorted in ascending order: ");
+        printArray(array);
+    }
+  
+    // Method 3
+    // Main driver method
+    public static void main(String[] args)   
+    {  
+    int n;  
+    Scanner sc=new Scanner(System.in);  
+    System.out.print("Enter the number of elements you want to store: ");  
+    //reading the number of elements from the that we want to enter  
+    n=sc.nextInt();  
+    //creates an array in the memory of length 10  
+    int[] array = new int[n];  
+    System.out.println("Enter the elements of the array: ");  
+    for(int i=0; i<n; i++)  
+    {  
+    //reading array elements from the user   
+    array[i]=sc.nextInt();  
+    }  
+    length = array.length;
+    printArray(array);
+    sortArray(array);
+   /* System.out.println("Array elements are: ");  
+    // accessing array elements using the for loop  
+    for (int i=0; i<n; i++)   
+    {  
+    System.out.println(array[i]);  
+    }*/  
+    }  
+    
+}
+
